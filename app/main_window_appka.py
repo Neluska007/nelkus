@@ -1,6 +1,6 @@
 ### GUI imports
 from guizero import *
-from main import *
+from main_appka import *
 
 ### GUI functions
 def my_first_gui_function():
@@ -10,13 +10,11 @@ def my_first_gui_function():
     except:
             text_cml.value = "Musíš vložit číslo"
             return
-    bmr=weight*24.2
     activityfactor=float(txtbox_af.value)
-    cml=bmr*activityfactor
-    cmlrounded= round(cml, 1)
+    cmlrounded= calculate_cml(weight,activityfactor)
     text_cml.value =cmlrounded
-
-### GUI App
+    
+   # GUI App
 app = App(title="My App", width=775, height=650)
 
 ## Window 1
